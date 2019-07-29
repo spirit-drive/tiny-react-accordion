@@ -1,0 +1,22 @@
+{
+  "parser": "babel-eslint",
+  "plugins": ["prettier", "react-hooks"],
+  "extends": ["airbnb", "prettier"],
+  "env": { "jest": true },
+  "globals": {
+    "document": true,
+    "requestAnimationFrame": true,
+    "getComputedStyle": true,
+    "require": true,
+    "window": true
+  },
+  "rules": {
+    "prettier/prettier": ["error"],
+    "import/no-unresolved": 0,
+    "no-use-before-define": ["error", { "variables": false }],
+    "no-plusplus": 0,
+    "react/jsx-filename-extension": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  }
+}

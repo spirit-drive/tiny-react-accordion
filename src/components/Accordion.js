@@ -7,8 +7,8 @@ const Accordion = ({ children, className, open, transitionDuration }) => {
   const accordion = useRef(null);
 
   useEffect(() => {
+    const height = parseFloat(getComputedStyle(accordion.current).height);
     if (open) {
-      const height = parseFloat(getComputedStyle(accordion.current).height);
       if (height !== accordion.current.scrollHeight) {
         accordion.current.style.height = `${accordion.current.scrollHeight}px`;
         requestAnimationFrame(() => {
@@ -17,7 +17,7 @@ const Accordion = ({ children, className, open, transitionDuration }) => {
           }, transitionDuration);
         });
       }
-    } else {
+    } else if (height !== 0) {
       accordion.current.style.height = `${accordion.current.scrollHeight}px`;
       requestAnimationFrame(() => {
         setTimeout(() => {
